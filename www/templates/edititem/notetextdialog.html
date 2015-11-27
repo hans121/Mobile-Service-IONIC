@@ -1,0 +1,19 @@
+<div class="modal note-modal">
+    <ion-content style="padding: 0px">
+        <div ng-repeat = "notetype in model.noteitems" style="width: 100%">
+            <div class="item item-divider">
+                {{notetype.type}}
+            </div>
+            <div ng-repeat="noteitem in notetype.data track by $index" class="item" ng-click="addNoteText($parent.$index, $index)">
+                <div class="row">
+                  <div class="pull-left">
+                    <i class="icon ion-chevron-right"></i>
+                  </div>
+                  <div style="padding:0px 20px 0px 20px; text-align: left; width: 100%">
+                    {{noteitem}}
+                  </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</div>   

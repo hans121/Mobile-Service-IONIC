@@ -1,0 +1,67 @@
+<ion-view title="Item Detail ({{model.name}})" hide-back-button="true">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-home" ng-click="goHome()"></button>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar bar-subheader bar-dark">
+        <div class="button-bar">
+            <a class="button button-energized" ng-click="onArrive()" ng-disabled="buttons.arrive">Arrive</a>
+            <a class="button button-energized" ng-click="onEdit()" ng-disabled="buttons.edit">Edit</a>
+            <a class="button button-energized" ng-click="onDepart()" ng-disabled="buttons.depart">Depart</a>
+        </div>
+    </ion-header-bar>  
+    <ion-content class="padding">
+        <!--Job Schedule Description-->
+        <div class="card card-job">
+            <div class="row row-center">
+                <div class="col-90">
+                    <span style="font-size: 1.1em">{{model.name}}</span><br/>
+                    {{model.task}}
+                   </div>
+                <div class="col" style="text-align: right">
+                    <i class="icon ion-ios7-telephone" style="font-size: 2em"></i>
+                </div>
+            </div>
+        </div>
+        <!--Job Detail View-->
+        <div class="pull-left" style="padding:0px 20px 0px 20px;width: 80%; height: 100%">
+            <div style="color: white; width: 100%" id="detaildiv">    
+            </div>
+            
+        </div>
+        <!--Job Detail Menu View-->
+        <div class="pull-right" style="margin-right: -5px">
+            <div class="list">
+                <div ng-repeat = "item in buttons">
+                    <button class="button button-energized icon {{item.icon}}" style="border-radius: 0px" ng-class="{active: item.selected==true}" ng-click="showDetail($index)"></button>    
+                </div>
+            </div>
+            </div>
+        </div>  
+    </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

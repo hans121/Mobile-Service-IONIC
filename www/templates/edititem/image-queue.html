@@ -1,0 +1,56 @@
+<ion-view view-title="Image Queue">
+    <ion-header-bar class="bar bar-subheader bar-dark">
+        <div class="button-bar">
+            <a class="button button-energized" ng-click="goScroll()" ng-disabled="view.scroll">Scroll View</a>
+            <a class="button button-energized" ng-click="goList()" ng-disabled="view.list">List View</a>
+        </div>
+    </ion-header-bar> 
+    <ion-content class="padding" ng-show="view.scroll" scroll="false" style="margin-bottom:60px">
+    	<!--
+    	<ion-slide-box style="height:100%;" show-pager="false" on-slide-changed="slideHasChanged($index)">
+		  <ion-slide ng-repeat="image in imagelist">
+	    		<div style="margin-left:20px; margin-top:20px; white-space:pre; width:{{scrollCaptionWidth}}; background:black;" class="imageURI">{{image.fileURL}}</div>
+			    <div style="width:{{scrollSize}};height:{{scrollSize}}; text-align:center; padding:20px;  background:black;" >
+			    	<img src="{{image.fileURL}}" style="width:100%;"/>
+	    		</div>
+		  </ion-slide>
+		</ion-slide-box>
+		-->
+
+		
+		<ul rn-carousel rn-carousel-index="carouselIndex" class="image" style="height:100%;">
+		  <li ng-repeat="image in imagelist">
+		  	<div style="margin-left:20px; margin-top:20px; white-space:pre; width:{{scrollCaptionWidth}}; background:black;" class="imageURI">{{image.fileURL}}</div>
+			    <div style="width:{{scrollSize}};height:{{scrollSize}}; text-align:center; padding:20px;  background:black;" >
+			    	<img src="{{image.fileURL}}" style="width:100%;"/>
+
+	    		</div>
+		    <!--<div class="layer">{{ image }}</div>-->
+		
+		  </li>
+		</ul>
+		<div id="carouselindex" style="display:none">{{carouselIndex}}</div>
+	</ion-content>
+	<ion-content class="padding" ng-show="view.list" style="margin-bottom:60px">
+		<ion-list>
+	    	<div ng-repeat="image in imagelist" style="width:100%; height:auto; padding:10px; border-bottom:1px solid white;" ng-show="imagelist.length" class="ImageList">
+	    		<ion-checkbox ng-model="image.check" class="noborder" >
+		    		<div style="width:100px; height:80px; display:inline-block; float:left; text-align:center" >
+		    			<img src="{{image.fileURL}}" style="height:100%;max-width:100px;"/>
+		    		</div>
+		    		<div style="margin-left:20px; float:left; white-space:pre; width:{{listCaptionWidth}}" class="imageURI">{{image.fileURL}}</div>
+	    		</ion-checkbox>
+	    	</div>
+	    	<div ng-show="!imagelist.length">
+				No Images in Queue.
+			</div>
+    	</ion-list>
+	</ion-content>
+	<ion-content style="bottom:50px; top:auto;" scroll="false">
+		<div style="width: 40%; margin-left:30%;">
+	      <button class="button button-energized button-block" style="margin:0px" ng-click="onDelete()">
+	        Delete
+	      </button>
+	    </div>
+</ion-content>
+</ion-view>

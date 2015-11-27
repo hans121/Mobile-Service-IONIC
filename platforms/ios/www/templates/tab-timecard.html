@@ -1,0 +1,58 @@
+<ion-view view-title="Time Card" hide-back-button="true">
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-home" ng-click="goHome()">
+            
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+       <div class="row nopadding" style="height: 100%">
+            <div class="col tc-left nopadding">
+                <div class="tc-date">
+                    <span class="tc-span"></span>
+                    <span class="tc-date-day">{{model.dateday}}</span>
+                    <span class="tc-date-numbers">{{model.datenum}}</span>
+                    <span class="tc-span"></span>
+                </div>
+                <div class="tc-status">
+                    <span class="tc-span"></span>
+                    <i class="fa {{model.icon}} fa-5x"></i>
+                    <h4 style="color: white">{{model.status}}</h4>
+                    <span class="tc-span"></span>
+                </div>
+                <div class="tc-controls">
+                    <button class="button tc-button button-energized" ng-click="onStart()" ng-disabled="buttons.start" on-hol"alert('adfasdfasdf')">
+                        Start
+                    </button>
+                    <button class="button tc-button button-energized" ng-click="onStop()" ng-disabled="buttons.stop">
+                        Stop
+                    </button>
+                </div>
+            </div>
+            <div class="col tc-right nopadding">
+                
+                <div class="tc-right-contents">
+                    <div class="tc-right-item" ng-repeat="time in model.times track by $index">
+                        <div class="tc-item-top">
+                            <div class="tc-item-top-left">IN</div>
+                            <div class="tc-item-top-right">{{time.intime}}</div>
+                        </div>
+                        <div class="tc-item-bottom">
+                            <div class="tc-item-bottom-left">OUT</div>
+                            <div class="tc-item-bottom-right">{{time.outtime}}</div>
+                        </div>
+                    </div>
+                    <div class="tc-total">
+                        <div class="tc-total-top">
+                            <div class="tc-total-top-left"><i class="fa fa-clock-o"></i></div>
+                            <div class="tc-total-top-right">{{model.totalhour}}</div>
+                        </div>
+                        <div class="tc-total-bottom">
+                            <div class="tc-total-bottom-left">TOTAL</div>
+                            <div class="tc-total-bottom-right">HOURS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

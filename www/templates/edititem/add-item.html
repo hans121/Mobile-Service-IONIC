@@ -1,0 +1,49 @@
+<ion-view title="Add Order Items({{}})">
+    <ion-content class="padding">
+        <div class="content-div">
+            <div class="para">
+                <span class="evo-title">Item Code/UPC</span>
+                <div class="row row-center">
+                    <div class="col">
+                        <input type="text" class="text-input" ng-model="model.itemcode"/>
+                    </div>
+                    <div class="col">
+                        <button class="button button-block button-small button-energized" ng-click="onScan()">
+                            Scan Barcode
+                        </button>
+                    </div>    
+                </div>     
+            </div>
+            <div class="para">
+                <div style="width:30%; padding: 10px;">
+                    <span class="evo-title">Quantity</span>
+                    <input type="text" class="text-input" ng-model="model.quantity"/>
+                </div>
+            </div>
+            <div style="width: 50%; margin-left: 25%; text-align: center">
+                <br/>
+                <button class="button button-block button-energized" ng-click="onAddItem()">
+                    Add Item
+                </button>
+            </div>   
+            <div class="para">
+                <span class="evo-title">Items Added</span>
+                <ion-list>
+                    <div class="row" ng-repeat="item in model.items">
+                        <div class="col">
+                            {{item.itemcode}}
+                        </div>
+                        <div class="col">
+                            {{item.quantity}}
+                        </div>
+                    </div>
+                </ion-list>
+            </div>
+            <div class="right-btn-div">
+                <button class="button button-block button-energized" ng-click="onSave()">
+                    Save
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

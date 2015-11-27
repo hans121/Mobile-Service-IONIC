@@ -1,0 +1,12 @@
+<ion-view title="Select Site Profile()">
+    <ion-content class="padding">
+        <div style="width:80%; margin-left: 10%; margin-top: 20%">
+            <span class="evo-title">Site Profiles:</span>
+            <ion-list>
+                <ion-item ng-repeat="item in items" ng-click="onSelectSite($index)">
+                    {{item}}
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>      

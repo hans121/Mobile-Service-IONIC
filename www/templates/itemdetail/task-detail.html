@@ -1,0 +1,38 @@
+<ion-view title="Item Detail({{}})" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar bar-subheader bar-dark">
+        <div class="button-bar" ng-controller="TopbuttonCtrl">
+            <a class="button button-energized" ng-click="onArrive()" ng-disabled="buttons.arrive">Arrive</a>
+            <a class="button button-energized" ng-click="onEdit()" ng-disabled="buttons.edit">Edit</a>
+            <a class="button button-energized" ng-click="onDepart()" ng-disabled="buttons.depart">Depart</a>
+        </div>
+    </ion-header-bar>
+    <ion-content class="padding"  has-header="true">
+        <div class="content-div">
+            <fieldset>
+                <legend>Task Detail</legend>
+                <p>
+                    TYPE: Pool Clean - Weekly<br/>
+                    DATE: 11/17/2009, ESTIMATE HOURS:1<br/>
+                    TIME FRAME: 3pm to 4pm, CONFIRMED: No<br/>
+                    PRIORITY: REG<br/>
+                    MANAGER: Poul Braks<br/>        
+                </p>      
+                <p>    
+                    REQUEST:<br/>
+                    Clean cartrigdes and check the filter
+                </p>
+                <p>
+                    MOBILE NOTIES:<br/>
+                    These are where any exisitng mobile notes would show.
+                </p>
+                <p>
+                    ORDER NOTES:<br/>
+                    This is where any existing notes on the order would show.
+                </p>
+            </fieldset>
+        </div>
+    </ion-content>
+</ion-view>

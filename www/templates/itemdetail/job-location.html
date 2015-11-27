@@ -1,0 +1,61 @@
+<ion-view title="Item Detail{{}}" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar bar-subheader bar-dark">
+        <div class="button-bar" ng-controller="TopbuttonCtrl">
+            <a class="button button-energized" ng-click="onArrive()" ng-disabled="buttons.arrive">Arrive</a>
+            <a class="button button-energized" ng-click="onEdit()" ng-disabled="buttons.edit">Edit</a>
+            <a class="button button-energized" ng-click="onDepart()" ng-disabled="buttons.depart">Depart</a>
+        </div>
+    </ion-header-bar>
+    <ion-content class="padding"  has-header="true">
+        <div class="content-div">
+            <fieldset>      
+                <legend>Job Location</legend> 
+                <p>
+                    JOB LOCATION<br/>
+                    Contant Name<br/>
+                    123 easy St <br/>
+                    Portland Or 97322<br/>
+                    Route/Quadrant
+                </p>
+                <p>
+                    PARENT ACCOUNT<br/>
+                    Executive Suites Property Management<br/>
+                    Phone :(423)234-1234 Mobile <br/>
+                    Email : ExecuSuite@propman.com <br/>
+                    {{item.parent}}
+                
+                </p>
+                <span class="evo-title">Contact: Ask for Joe</span>
+                <div class="row">
+                    <div class="col">
+                        Contact                    
+                    </div>
+                    <div class="col">
+                        Comment
+                    </div>
+                    <div class="col">
+                        Action
+                    </div>
+                </div>
+                <ion-list>
+                    <ion-item ng-repeat="contact in item.contacts">
+                        <div class="row">
+                            <div class="col">
+                                {{contact.contactinfo}}
+                            </div>
+                            <div class="col">
+                                {{contact.comment}}
+                            </div>
+                            <div class="col">
+                                {{contact.action}}
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </fieldset>
+        </div>
+    </ion-content>
+</ion-view>

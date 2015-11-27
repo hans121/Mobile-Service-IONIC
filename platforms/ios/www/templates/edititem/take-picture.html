@@ -1,0 +1,32 @@
+<ion-view title="Image Capture({{}})">
+    <ion-content class="padding" scroll=false>
+        <div class="content-div">
+            
+            <ul rn-carousel rn-carousel-index="carouselPos" class="image" style="height:{{contentHeight}}; margin-top:10px;" id="carousel">
+                <li ng-repeat="image in imagelist" ng-show="imagelist.length">
+                    <div style="white-space:pre; width:{{scrollCaptionWidth}}; background:black;" class="imageURI">{{image.fileURL}}</div>
+                    <div style="width:100%;max-height:{{scrollHeight}};text-align:center; background:black;" >
+                        <img ng-src="{{image.fileURL}}" style="width:100%;max-height:{{scrollHeight}};"/>
+
+                    </div>
+                </li>
+                <div ng-show="!imagelist.length" style="height:{{scrollHeight}}; width:100%;">
+                    No Images in Queue.
+                </div>
+                <div style="width:100%; text-align : center;  width:{{scrollCaptionWidth}}; position:absolute; bottom:20px">
+                <button class="button button-energized button-block button-small" style="margin:0px" ng-click="onDelete($parent)">
+                    Delete
+                </button>
+                <button class="button button-block button-energized button-small" ng-click="onChooseImage()">
+                    Choose Image
+                </button>
+                <button class="button button-block button-energized button-small" ng-click="onTakePhoto()">
+                    Take Picture
+                </button>
+            </div>
+            </ul>            
+            <div id="carouselindex" style="display:none">{{carouselPos}}</div>
+            
+        </div>
+    </ion-content>
+</ion-view> 

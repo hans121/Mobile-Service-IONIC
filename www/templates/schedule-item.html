@@ -1,0 +1,25 @@
+<ion-view view-title="Schedule Items">
+  <ion-header-bar class="bar bar-subheader bar-dark">
+    <ti-segmented-control on-select="getDateSchedule($index)" style="width: 100%">
+      <ti-segmented-control-button class="button-energized" ng-repeat="item in model.days" title="item.day" ng-class="{active: item.selected==true}"></ti-segmented-control-button>
+    </ti-segmented-control>
+  </ion-header-bar>
+  <ion-content class="padding" has-header="true">
+    <div class="content-div">
+        <ion-list>          
+          <div class="row row-top nopadding schedule-item" ng-repeat = "item in model.items track by $index" ng-click="goDetail(item.schedule_PK, item.listview_task)" on-hold="onHold(item.schedule_PK, item.listview_task)">
+              <div class="col col-66" style="text-align: left">
+                <span style="font-size: 1.2em">{{item.name}}</span><br/>
+                <div ng-repeat = "row in item.task">
+                  {{row}}
+                </div>
+              </div>
+              <div class="col" style="text-align: right">
+                {{item.timeframe}}<br/>
+                <span>{{model.status_list[item.schedule_PK]}}</span>
+              </div>
+          </div>  
+        </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

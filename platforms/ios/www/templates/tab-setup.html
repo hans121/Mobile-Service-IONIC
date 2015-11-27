@@ -1,0 +1,51 @@
+<ion-view view-title="Account">
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-home" ng-click="goHome()"></button>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <div class="content-div">
+      <div class="row row-center">
+        <div class="col col-25" style="text-align: right">
+          Serial Number
+        </div>
+        <div class="col" style="text-align: left">
+          <input type="text" ng-model="model.sn"/>
+        </div>
+      </div>
+      <div class="row row-bottom">
+        <div class="col col-25" style="text-align: right">
+          User ID
+        </div>
+        <div class="col" style="text-align: left">
+          <input type="text" ng-model="model.userid"/>
+        </div>
+      </div>
+      <div class="row row-bottom">    
+        <div class="col col-25" style="text-align: right">
+          Password
+        </div>
+        <div class="col" style="text-align: left">
+          <input type="password" ng-model="model.password"/>
+        </div>
+      </div>
+      <div class="row row-bottom">
+        <div class="col col-25" style="text-align: right">
+          Pin#
+        </div>
+        <div class="col" style="text-align: left">
+          <input type="text" ng-model="model.pin"/>
+        </div>
+      </div>
+      <div clas="row row-bottom">
+        <div class="col" style="text-align: left; margin-left : 30px">
+          <ion-checkbox ng-model="model.isWifi" class="noborder">Send picture over WiFi only</ion-checkbox>
+        </div>
+      </div>
+      <div class="right-btn-div">
+        <button class="button button-energized button-block" ng-click="onSave()">
+          Save
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view title="Service Prompt">
+    <ion-content class="padding">
+        
+        <div class="content-div">
+            
+            <div class="row">
+                <div class="col">
+                    Prompt
+                </div>
+                <div class="col" style="text-align: center">
+                    Measure
+                </div>          
+                <div class="col" style="text-align: center">
+                    Adjust
+                </div>  
+            </div>
+            <ion-list>
+                <div class="row row-center" ng-repeat="row in model.list track by $index">
+                    <div class="col">
+                        {{row.label}}
+                    </div>
+                    <div class="col">
+                        <select class="input-select" ng-model="row.value.def" ng-selected="row.value.def" ng-options="item as item for item in row.value.list">
+                        </select>                        
+                    </div>
+                    <div class="col">
+                        <select class="input-select" ng-model="row.adjust.def" ng-selected="row.adjust.def" ng-options="item as item for item in row.adjust.list">
+                        </select>   
+                    </div>
+                </div>
+            </ion-list>
+        <div class="right-btn-div">
+            <button class="button button-block button-energized" ng-click="onSave()">
+                Save
+            </button>     
+        </div>
+        </div>
+    </ion-content>
+</ion-view>

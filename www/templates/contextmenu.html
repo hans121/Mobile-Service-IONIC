@@ -1,0 +1,18 @@
+<div class="modal note-modal">
+    <ion-content style="padding: 0px">
+        <div class="con-menu-header">
+            {{modal.name}}
+        </div>
+
+        <ion-list>
+            <button class="row con-menu" ng-repeat="menuitem in modal.items" ng-click="gotoPage($index)" ng-disabled="menuitem.disabled">
+              <div class="pull-left">
+                <i class="icon {{menuitem.icon}}"></i>
+              </div>
+              <div style="padding:0px 20px 10px 20px; text-align: left; width: 100%">
+                {{menuitem.title}}<br/>
+              </div>
+            </button>
+        </ion-list>
+    </ion-content>
+</div> 

@@ -1,0 +1,29 @@
+<ion-view title="Mobile Notes">
+    <ion-content class="padding">
+        <div class="content-div">
+            <div class="right-btn-div">
+                <button class="button button-small button-energized button-full" ng-click="onShowQuickNote()" >
+                    Quick Text
+                </button>
+            </div>
+            <div class="">
+                <textarea rows="20" ng-model="model.quickText"></textarea>    
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="button button-block button-small button-energized">
+                        Cancel
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="button button-block button-small button-energized" ng-if="!model.isSaveDisabled" ng-click="onSave()">
+                        Save
+                    </button>
+                    <button class="button button-block button-small button-energized" disabled ng-if="model.isSaveDisabled" ng-click="onSave()">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-content>    
+</ion-view>

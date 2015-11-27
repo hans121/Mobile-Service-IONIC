@@ -1,0 +1,64 @@
+<ion-view title="Note & Status ({{}})">
+    <ion-content class="padding">
+    <div class="content-div">
+        <ion-scroll direction="y" style="width: 100%; height: 100%">
+            <div style="width: 100%; overflow: visible">
+            <div class="row">
+                <div class="col">
+                    <span class="input-label">Status</span>    
+                </div>
+                <div class="col">
+                    <select ng-change="onChangeStatus()" ng-model="model.status" ng-selected="model.status" ng-options="item.value as item.name for item in model.options">
+                    </select>    
+                </div>
+            </div>    
+            <br/>
+            <div style="width: 100%" id="icReason">
+            <fieldset>
+                <legend>Incomplete Reason</legend>
+                <ul class="list">
+                    <li class="list item-checkbox" ng-repeat = "reason in model.reasons">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="reason.checked"/>
+                        </label>
+                        {{reason.label}}
+                    </li>
+                </ul>
+            </fieldset>
+            </div> 
+            <br/>
+
+            <ion-checkbox ng-model="model.isWarranty" class="noborder">Is Warranty?</ion-checkbox>
+            <div class="row row-center">
+                <div class="col">
+                    <span class="label">TechNotes</span>  
+                </div>
+                <div class="col align-right">
+                    <button class="button button-small button-energized" ng-click="onShowQuickNote()">
+                        Show Quick Text
+                    </button>     
+                </div>
+            </div>
+            <textarea rows="3" ng-model="model.quickText1"></textarea>
+            <div class="row">
+                <div class="col">
+                    <span class="evo-title">Mobile Admin Notes</span>  
+                </div>
+                <div class="col align-right">
+                    <button class="button button-small button-energized" ng-click="onShowMobileNote()">
+                        Show Quick Text
+                    </button>     
+                </div>
+            </div>
+            <textarea rows="3" ng-model="model.quickText2"></textarea>
+            <div class="right-btn-div">
+                <br/>
+                <button class="button button-energized button-block" ng-click="onSave()">
+                    Save
+                </button>
+            </div>  
+            </div>
+        </ion-scroll>
+    </div>
+    </ion-content>
+</ion-view>

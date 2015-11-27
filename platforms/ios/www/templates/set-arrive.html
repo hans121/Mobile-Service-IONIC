@@ -1,0 +1,26 @@
+<ion-view title="Enter Password({{model.name}})">
+    <ion-content>
+        <div class="content-div">
+            <span class="evo-title">Enter Password</span>
+            <div class="row row-center">
+                <div class="col">
+                    <input type="password" class="" ng-model="model.password"/>
+                </div>
+                <div class="col">
+                    <button class="button button-energized button-small button-block nowrap" ng-click="onScan()">
+                        Scan Password
+                    </button>
+                </div>
+            </div>
+            <div style="text-align: center; width: 100%">
+                <span>{{}}</span>
+            </div>
+            <div style="text-align: center; width: 60%; margin-left: 20%">
+                <button class="button button-energized button-block" ng-click="onArrive()">
+                    Arrive
+                </button>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>            
